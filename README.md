@@ -1,37 +1,53 @@
-# Mantine Next.js template
+# Market System
+Market System é um projeto elaborado para fins de estudos das bibliotecas do NextJS e Mantine, este projeto está utilizando o template do Mantine+NextJS.
+Este projeto precisa ter as seguintes funcionalidades:
+- Dashboard
+  - Trará pequenos relatórios de quais itens são mais vendidos, categoria, média de consumo, entre outros gráficos que podem ser aplicados
+- Market
+  - Sua funcionalidade principal é executar as compras do cliente
+  - Exibir preço unitário ou por kg
+  - Listar produtos cadastrados (ao passar o mesmo produto, somar a quantidade anterior + atual)
+  - Finalizar compra exibe forma de pagamento
+- Stock
+  - Esta tela terá como funcionalidade cadastrar novos produtos
+  - Terá uma aba de categorias para cadastrar nova categoria
+  - Listará todos os itens
+- Configuration
+  - Tela para definir se o código que será utilizado será o código de barras ou código interno
 
-This is a template for [Next.js](https://nextjs.org/) app router + [Mantine](https://mantine.dev/).
-If you want to use pages router instead, see [next-pages-template](https://github.com/mantinedev/next-pages-template).
+## Bibliotecas
 
-## Features
+- [Next.js](https://nextjs.org/)
+- [Mantine](https://mantine.dev/)
+- A instalar: [Tabler Icon](https://tabler.io/docs/icons/react)
 
-This template comes with the following features:
+## Como iniciar
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Storybook](https://storybook.js.org/)
-- [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+### Requisitos
 
-## npm scripts
+node versão 18.19.0 +
+Instale o node na versão mais recente. ([Node](https://nodejs.org/en/download))
 
-### Build and dev scripts
+yarn versão 4.0.1
+Abra o powershell como administrador e utilize este seguinte comando na raiz:
+```bash
+npm install --global yarn
+```
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+### Iniciando o projeto
 
-### Testing scripts
+No prompt de comandos, faça a instalação dos pacotes do projeto utilizando o seguinte comando 
+```bash
+yarn install
+```
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+Após os pacotes serem instalados, execute a aplicação utilizando o seguinte comando
+```bash
+yarn run dev
+```
 
-### Other scripts
+### Estrutura
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+Este projeto está utilizando a estruturação de nextjs utilizando a pasta `app`, na pasta `app` do projeto temos o arquivo `page.tsx` que é a rota principal (`/`), na mesma pasta, temos outra pasta com o nome `app` com outras duas pastas, a `market` e `dashboard`, a subpasta `app` será utilizado para rotas após o login.
+
+A pasta `components` está reservada para componentização, para novos componentes, utilizar o nome da rota + NomeDoComponente para facilitar a navegação, exemplo: `market/ItemList`, neste exemplo é possível identificar que este componente é encontrado na pagina de market e é referente a listagem de itens da compra. Terá momentos que será necessário criar componentes para o componente, neste caso, segue a mesma regra do exemplo anterior, só que inserindo o componente dentro da pasta do componente pai, exemplo: `market/ItemList/PurchaseTotal`, neste exemplo, é possível identificar que possui um componente de total dentro do componente `ItemList` na rota `market`
