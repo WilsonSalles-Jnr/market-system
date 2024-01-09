@@ -51,7 +51,7 @@ export default function Market() {
             />
           </InputWrapper>
         </Group>
-        <Group justify="space-between" w="100%" align="start" display="none">
+        <Group justify="space-between" w="100%" align="start" display={item ? undefined : 'none'}>
           <Text fz={30} fw={700}>
             {item?.name}
           </Text>
@@ -59,7 +59,7 @@ export default function Market() {
             <Text fz={30} fw={700}>
               {item ? `${quantity} ${item.unit}` : 1}
             </Text>
-            <Text  fz={30} fw={700}>
+            <Text fz={30} fw={700}>
               {`R$ ${item?.price ? (item.price * (quantity || 1)).toFixed(2) : '-'}`}
             </Text>
             <Text fz={24} fw={300}>
